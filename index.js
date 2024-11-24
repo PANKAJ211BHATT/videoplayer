@@ -7,7 +7,8 @@ const videosMap = {
     "riverandtheforest": "assets/video6.mp4",
     "monkeyfamily": "assets/video7.mp4",
     "cityfromabove": "assets/video8.mp4",
-    "griget": "assets/video9.mp4"
+    "griget": "assets/video9.mp4",
+    "nofound": "assets/notfound.jpg"
 }
 
 const searchfield = document.querySelector("#inputfield");
@@ -19,7 +20,8 @@ const videoscreen = document.querySelector("video");
 const source = document.querySelector("source");
 
 function playthevideo() {
-    const query = searchfield.value.trim().toLowerCase();
+    source.src = "nofound";
+    const query = searchfield.value.trim().toLowerCase().replaceAll(' ', '');
 
     if (videosMap[query]) {
         videoheading.textContent = query;
@@ -28,7 +30,7 @@ function playthevideo() {
         videoscreen.play();
     }
     else {
-        videoheading.textContent = "no video found";
+        window.location.href = "notfound.html";
     }
 }
 searchfield.addEventListener("keydown", function (event) {
