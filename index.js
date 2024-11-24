@@ -5,7 +5,7 @@ const videosMap = {
     "clouds": "assets/video4.mp4",
     "basketballring": "assets/video5.mp4",
     "riverandtheforest": "assets/video6.mp4",
-    "monkeyfamily": "assets/video7.mp4",
+    "monkeyfamily": "   assets/video7.mp4",
     "cityfromabove": "assets/video8.mp4",
     "griget": "assets/video9.mp4",
     "nofound": "assets/notfound.jpg"
@@ -20,11 +20,9 @@ const videoscreen = document.querySelector("video");
 const source = document.querySelector("source");
 
 function playthevideo() {
-    source.src = "nofound";
     const query = searchfield.value.trim().toLowerCase().replaceAll(' ', '');
 
     if (videosMap[query]) {
-        videoheading.textContent = query;
         source.src = videosMap[query];
         videoscreen.load();
         videoscreen.play();
@@ -41,6 +39,10 @@ searchfield.addEventListener("keydown", function (event) {
 
 })
 searchbuttonjs.addEventListener("click", playthevideo);
+
+document.getElementById("backbutton").addEventListener("click", () => {
+    window.location.href = "index.html";
+})
 
 
 
