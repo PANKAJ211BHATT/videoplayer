@@ -18,10 +18,9 @@ const videoheading = document.querySelector("#videoname");
 const videoscreen = document.querySelector("video");
 const source = document.querySelector("source");
 
-searchbuttonjs.addEventListener("click", () => {
+function playthevideo() {
     const query = searchfield.value.trim().toLowerCase();
 
-    console.log("clicked");
     if (videosMap[query]) {
         videoheading.textContent = query;
         source.src = videosMap[query];
@@ -31,5 +30,15 @@ searchbuttonjs.addEventListener("click", () => {
     else {
         videoheading.textContent = "no video found";
     }
+}
+searchfield.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        playthevideo();
+    }
+
 })
+searchbuttonjs.addEventListener("click", playthevideo);
+
+
 
