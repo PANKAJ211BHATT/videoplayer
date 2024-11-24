@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  border: 1px solid black;
+  height: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+video {
+  height: 35rem;
+  width: 97%;
+  padding: 0.8rem;
+}
+.searchdiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.searchdiv input {
+  height: 2rem;
+  width: 40rem;
+  margin: 0 4rem;
+}
+.searchdiv button {
+}
